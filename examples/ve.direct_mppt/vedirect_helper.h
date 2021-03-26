@@ -7,7 +7,7 @@
 
 class VEDirectInput : public Sensor {
   public:
-    VEDirectInput(Stream* rx_stream);
+    VEDirectInput(Stream* rx_stream, uint8_t chargernumber);
     virtual void enable() override final;
     VEDirectData vedirect_data_;
   private:
@@ -15,6 +15,6 @@ class VEDirectInput : public Sensor {
     VEDirectParser vedirect_parser_;
 };
 
-VEDirectInput* setup_vedirect(Stream* rx_stream);
+VEDirectInput* setup_vedirect(Stream* rx_stream, uint8_t chargernumber);
 
 #endif
